@@ -1,0 +1,80 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src=" https://cdnjs.com/libraries/semantic-ui/2.2.2"></script> -->
+    <!-- <script sc="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js" integrity="sha512-9mIO3KPsmSi7I/QkDmWn0gjtdcXNRg5lt7eLyiUDwz/gWpLxmV3XQS167QYjMalE2KFQy56o9OVM8CX0Vrvd4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <title>Document</title>
+    <style>
+        .main.container {
+            padding-top: 50px;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div class="ui inverted fixed menu">
+        <div class="header item">Tutoriel</div>
+    </div>
+    <div class="ui main container" id="app">
+
+        <p @click="demo_sup">
+
+            <a href="https://grafikart.fr" @click="de">Demo normal click</a>
+            <br />
+            <a href="https://grafikart.fr" @click.prevent="demo">Demo prevent</a>
+            <!-- @click.prevent = e.preventDefault en js -->
+            <br />
+            <a href="https://grafikart.fr" @click.stop="demo2">Demo stop</a>
+            <br />
+            <a href="https://grafikart.fr" @click.prevent.stop="demo3">Demo prevent.stop</a>
+            <br />
+            <a href="https://grafikart.fr" @click.capture="demo4">Demo capture</a>
+            <br />
+            <a href="https://grafikart.fr" @click.self="demo5">Demo self</a>
+            <!-- self : empeche la detection du click -->
+        </p>
+
+        v-model
+        },
+        <input type="text" v-model="message"> <br>
+        
+        
+        v-model.lazy : changement uniquement lorsqu'on sort du champ
+        <input type="text" v-model.lazy="message"> <br>
+        
+        v-model.number
+        <input type="text" v-model.number="message"> <br>
+        
+                
+        v-model.trim
+        <input type="text" v-model.trim="message"> <br>
+
+        ==={{ message }}===
+                
+        @keyup demo
+        <input type="text" @keyup="demo"> <br>
+
+        @keyup.space demo
+        <input type="text" @keyup.space="demo"> <br>
+
+        directive créé v-salu.a.b.c demo
+        <input type="text" v-salut.a.b.c="message"> <br>
+        
+
+
+
+    </div>
+    <script src="js/app4.js"></script>
+</body>
+
+</html>
