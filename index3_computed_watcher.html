@@ -1,0 +1,90 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src=" https://cdnjs.com/libraries/semantic-ui/2.2.2"></script> -->
+    <!-- <script sc="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js" integrity="sha512-9mIO3KPsmSi7I/QkDmWn0gjtdcXNRg5lt7eLyiUDwz/gWpLxmV3XQS167QYjMalE2KFQy56o9OVM8CX0Vrvd4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <title>Document</title>
+    <style>
+        .main.container {
+            padding-top: 50px;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div class="ui inverted fixed menu">
+        <div class="header item">Tutoriel</div>
+    </div>
+    <div class="ui main container" id="app">
+
+        <!-- methods version -->
+       
+        <input type="checkbox" v-model="success">
+
+        <input type="text" v-model="message">
+
+        {{ message }}
+
+        <div class="ui message" :class="cls()">
+            Salut
+        </div>
+        
+        <!-- computed version -->
+
+        <input type="checkbox" v-model="success_comp">
+
+        <input type="text" v-model="message_comp">
+
+        {{ message_comp }}
+
+        <!-- non plus une fonction cls_comp()
+        mais une propriété cls_comp (?????) -->
+        <div class="ui message" :class="cls_comp">
+            Salut !
+        </div>
+
+        <div>
+            <p>
+                Prénom : {{ firstname }}
+                <br />
+                Nom : {{ lastname }}
+                <br />
+                Nom Complet : {{ fullname }}
+                <br />
+                Nom Complet: <input type="text" v-model="fullname">
+                <!-- si la valeur fullname est modifié, ça n'affectera pas la meth, puisque
+                computed -->
+                <br />
+                <!-- Version avec un get et setter -->
+                Nom Complet (get and set into computed meth) :
+                <input type="text" v-model="fullname_modified">
+                <br />
+                <!-- Version watcher -->
+                Nom Complet watcher : 
+                <input type="text" v-model="fullname_watched">
+            </p>
+
+            <!-- methode :
+            {{ sum_meth() }}
+            comp :
+            {{ sum_comp }}
+
+            <input type="button" v-model="sum_comp"> -->
+
+        </div>
+
+    </div>
+    <script src="js/app3.js"></script>
+</body>
+
+</html>

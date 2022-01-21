@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src=" https://cdnjs.com/libraries/semantic-ui/2.2.2"></script> -->
+    <!-- <script sc="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js" integrity="sha512-9mIO3KPsmSi7I/QkDmWn0gjtdcXNRg5lt7eLyiUDwz/gWpLxmV3XQS167QYjMalE2KFQy56o9OVM8CX0Vrvd4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <title>Document</title>
+    <style>
+        .main.container {
+            padding-top: 50px;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div class="ui inverted fixed menu">
+        <div class="header item">Tutoriel</div>
+    </div>
+    <div class="ui main container" id="app">
+        <a :href="link" :title="message">{{ message }}</a>
+
+        <!-- <input type="text" :value="messageUser"> -->
+        <input type="text" v-model="messageVar">
+        <input type="checkbox" v-model="success">
+
+        <ul>
+            <li v-for="person in persons">
+                {{ person }}
+            </li>
+        </ul>
+
+        <div class="ui success message" v-if="success">
+            <i class="close icon" @click="close"></i>
+
+            <p>{{ messageUser }}</p>
+            <p>{{ messageVar }}</p>
+
+            <p>Yes</p>
+        </div>
+        <div class="ui error message" v-else>
+            <p>echec</p>
+        </div>
+
+        <div class="ui message" :class="{success: success, error: !success}" :style="style()">
+            <i class="close icon" @click="close"></i>
+            <p>{{ message }}</p>
+        </div>
+        
+        <input type="checkbox" v-model="cls" :true-value="'success'" :false-value="'error'">
+        <div class="ui message" :class="cls">
+            <i class="close icon" @click="close"></i>
+        </div>
+        
+        <h1>video instance</h1>
+        
+        <div class="ui main container">
+            {{ persons }} {{ demo }}
+
+            <button @click="addPerson">Add</button>
+        </div>
+       
+        
+
+
+
+
+
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
